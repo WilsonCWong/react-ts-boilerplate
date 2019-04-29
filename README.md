@@ -5,4 +5,4 @@ It has Jest for testing and Babel for transpiling. JavaScript proposals for clas
 ## Get Started
 1. Clone the repository.
 2. ```cd``` to the directory and run ```yarn install```.
-3. ```yarn dev``` to run the development server.
+3. ```yarn start``` to run the development server.
