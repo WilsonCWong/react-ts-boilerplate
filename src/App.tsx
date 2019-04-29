@@ -3,6 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  greeter(person: string): string {
+    return `Hello ${person}.`;
+  }
+
   render() {
     return (
       <div className="App">
@@ -17,7 +22,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            { this.greeter("Wilson") }
           </a>
         </header>
       </div>
