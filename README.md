@@ -1,4 +1,4 @@
-This is a TypeScript boilerplate created using [Create React App](https://github.com/facebook/create-react-app) and [React App Rewired](https://github.com/timarney/react-app-rewired).
+This is a TypeScript boilerplate created using [Create React App](https://github.com/facebook/create-react-app) and [Customize CRA](https://github.com/arackaf/customize-cra).
 
 It has Jest for testing and Babel for transpiling. JavaScript proposals for class properties and object rest spread is supported with two Babel plugins.
 
