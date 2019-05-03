@@ -9,6 +9,7 @@ module.exports = override(
     "@babel/preset-typescript",
   ]),
   ...addBabelPlugins(
+    "babel-plugin-styled-components",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
   )

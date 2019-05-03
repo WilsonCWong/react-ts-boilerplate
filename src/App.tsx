@@ -1,31 +1,51 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import anime from 'animejs';
+import styled from 'styled-components';
+import { ReactComponent as SVGLogo } from './logo.svg';
 import './App.css';
 
-class App extends Component {
+const LogoContainer = styled.div`
+  position: relative;
+  margin: auto;
+  width: 256px;
+`;
 
-  greeter(person: string): string {
-    return `Hello ${person}.`;
+const Logo = styled(SVGLogo)`
+  pointer-events: none;
+`;
+
+const Circle = styled.div`
+  pointer-events: none;
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgb(255, 104, 104);;
+`;
+
+class App extends Component<{}, { dir: number }> {
+  componentDidMount() {
+    var path = anime.path(`${Logo} path`);
+
+    anime({
+      targets: `${Circle}`,
+      translateX: path('x'),
+      translateY: path('y'),
+      rotate: path('angle'),
+      easing: 'linear',
+      duration: 10000,
+      loop: true,
+    })
   }
-
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            { this.greeter("Wilson") }
-          </a>
-        </header>
-      </div>
+      <LogoContainer>
+        <Circle />
+        <Logo />
+      </LogoContainer>
     );
   }
 }
