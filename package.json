@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/animejs": "^2.0.2",
-    "@types/styled-components": "^4.1.14",
     "animejs": "^3.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -31,13 +29,15 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/animejs": "^2.0.2",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.13.5",
     "@types/react-dom": "^16.8.4",
+    "@types/styled-components": "^4.1.14",
     "babel-plugin-styled-components": "^1.10.0",
     "customize-cra": "^0.2.12",
     "jest-styled-components": "^6.3.1",
     "react-app-rewired": "^2.1.1",
-    "typescript": "^3.4.4"
+    "typescript": "3.3.3333"
   }
 }
