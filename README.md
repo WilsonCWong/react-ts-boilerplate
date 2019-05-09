@@ -3,7 +3,7 @@ This is a TypeScript boilerplate created using [Create React App](https://github
 It has Jest for testing and Babel for transpiling. JavaScript proposals for class properties and object rest spread is supported with two Babel plugins.
 
 ## About this Branch
-This branch utilizes [styled components](https://www.styled-components.com) and [anime.js](https://animejs.com) for styles and animation, respectively. Further improvement can be done by integrating anime.js with React Transition Group.
+This branch utilizes [styled components](https://www.styled-components.com) and [anime.js](https://animejs.com) for styles and animation, respectively. [Redux](https://redux.js.org/) is used for state management. Further improvement can be done by integrating anime.js with React Transition Group. ```anime.js``` is not used in the example here, but instead is replaced with an example showing Redux with a progress bar. Redux Thunk is also installed, if that is needed for asynchronous dispatches.
 
 ## Get Started
 1. Clone the repository.
