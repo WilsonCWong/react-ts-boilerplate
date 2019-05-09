@@ -1,53 +1,62 @@
 import React, { Component } from 'react';
-import anime from 'animejs';
+import { connect } from 'react-redux';
+import { AnyAction, Dispatch } from 'redux';
+import { AppState } from './store';
 import styled from 'styled-components';
-import { ReactComponent as SVGLogo } from './logo.svg';
-import './App.css';
 
-const LogoContainer = styled.div`
-  position: relative;
-  margin: auto;
-  width: 256px;
-`;
+import { ProgressBarState } from './store/progress-bar/types';
+import { updateProgress } from './store/progress-bar/actions';
 
-const Logo = styled(SVGLogo)`
-  pointer-events: none;
-`;
+import ProgressBar from './components/ProgressBar';
 
-const Circle = styled.div`
-  pointer-events: none;
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgb(255, 104, 104);;
-`;
 
-class App extends Component<{}, { dir: number }> {
-  componentDidMount() {
-    var path = anime.path(`${Logo} path`);
 
-    anime({
-      targets: `${Circle}`,
-      translateX: path('x'),
-      translateY: path('y'),
-      rotate: path('angle'),
-      easing: 'linear',
-      duration: 10000,
-      loop: true,
-    })
-  }
-  
+interface AppProps {
+  progressBar: ProgressBarState;
+  updateProgress: (progress: number) => void;
+}
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+`
+
+const Input = styled.input`
+  display: block;
+`
+
+class App extends Component<AppProps> {
   render() {
     return (
-      <LogoContainer>
-        <Circle />
-        <Logo />
-      </LogoContainer>
+      <Container>
+        <ProgressBar size='s' progress={this.props.progressBar.progress} />
+        <Input 
+          type="range"
+          value={this.props.progressBar.progress} min={0} max={100}
+          onChange={(e) => this.props.updateProgress(Number(e.currentTarget.value))}
+        />
+      </Container>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state: AppState) => ({
+  progressBar: state.progressBar,
+})
+
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => {
+  return {
+    updateProgress: (progress: number) => {
+      dispatch(updateProgress(progress))
+    }
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

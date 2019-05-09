@@ -7,37 +7,3 @@ body {
   padding: 0;
   margin: 0;
 }
-
-.box {
-  width: 100px;
-  height: 100px;
-  background: #ff1c68;
-  transform-origin: 50% 50%;
-}
-
-.logo-container {
-  position: relative;
-  margin: auto;
-  width: 256px;
-}
-
-.logo {
-  pointer-events: none;
-}
-
-.follow-path {
-  position: absolute;
-  top: -6px;
-  left: -6px;
-}
-
-.medium {
-  width: 12px;
-  height: 12px;
-}
-
-.circle {
-  pointer-events: none;
-  background-color: rgb(255, 104, 104);
-  border-radius: 50%;
-}
