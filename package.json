@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -28,7 +28,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.11",
-    "@types/node": "^11.13.5",
+    "@types/node": "^12.6.0",
     "@types/react-dom": "^16.8.4",
     "customize-cra": "^0.2.12",
     "react-app-rewired": "^2.1.1",
